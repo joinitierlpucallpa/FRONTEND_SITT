@@ -1,0 +1,419 @@
+
+
+<div class="container">
+    <!-- Content here -->
+
+    <div class="card text-white bg-primary">
+        <div class="card-header" style="text-align: center; font-size: 20px; font-weight: bolder;">Registro de Infracciones de Tránsito</div>        
+      </div>
+
+<form #regFormx="ngForm" class="needs-validation" novalidate >
+
+    <div class="form-row">
+    
+        <div class="col-md-5 mb-3">
+            <label for="validationTooltip03">&nbsp;</label>
+            <br>                        
+        </div>  
+        <div class="col-md-2 mb-3">
+            <label for="validationTooltip02">&nbsp;&nbsp;&nbsp;Número de Papeleta</label>
+            <input type="text" class="form-control" id="validationTooltip01" placeholder="Ejemplo: 001590919" value="" required> 
+        </div>  
+        
+        <div class="col-md-5 mb-3">
+            <label for="validationTooltip03">&nbsp;</label>
+            <br>                        
+        </div>  
+    </div>
+
+    <div class="form-row">
+    
+        <div class="col-md-12 mb-3">
+            <label for="validationTooltip02" style="font-weight: bold;">DATOS DEL INFRACTOR</label>
+        </div>    
+    </div>
+
+  <div class="form-row">
+    
+    <div class="col-md-1 mb-3">
+        <label for="validationTooltip02">Tipo Doc.</label>
+        <select id="cars" class="form-control">
+          <option value="volvo">DNI</option>         
+        </select>
+        <div class="valid-tooltip">
+          Looks good!
+        </div>
+    </div>    
+    
+    <div class="col-md-2 mb-3">
+      <label for="validationTooltip02">Número de Documento</label>
+      <input type="text" class="form-control" id="validationTooltip01" placeholder="Número de documento" name='fdniConductor' value="" [(ngModel)]='fdniConductor' required>      
+    </div>  
+    
+    <div class="col-md-2 mb-3">
+        <label for="validationTooltip02" style="color: cornsilk;">N</label>
+        <br>        
+        <button style="vertical-align: bottom;" (click)="BuscarDNI()"><img src="../../../assets/img/buscar.png" alt="x" height="30px" width="28px"/></button>
+        &nbsp;
+        <button style="vertical-align: bottom;" data-toggle="modal" data-target="#exampleModalCenter"><img src="../../../assets/img/user.png" alt="x" height="30px" width="28px"/></button>
+    </div>  
+
+      
+
+    <div class="col-md-2 mb-3">
+      <label for="validationTooltipUsername">Licencia de Conducir</label>
+      <input type="text" class="form-control" id="validationTooltip01" placeholder="Licencia de conducir" value="" required>
+        <div class="invalid-tooltip">
+          Please choose a unique and valid username.
+        </div>
+    </div>   
+    
+    <div class="col-md-3 mb-3">
+        <label for="validationTooltipUsername">Clase</label>
+        <input type="text" class="form-control" id="validationTooltip01" placeholder="Clase" value="" required>        
+          <div class="invalid-tooltip">
+            Please choose a unique and valid username.
+          </div>
+    </div>   
+
+    <div class="col-md-2 mb-3">
+        <label for="validationTooltipUsername">Categoría</label>
+        <input type="text" class="form-control" id="validationTooltip01" placeholder="Categoria" value="" required>        
+          <div class="invalid-tooltip">
+            Please choose a unique and valid username.
+          </div>
+    </div>   
+    
+  </div>
+
+
+  <div class="form-row">
+   
+    <div class="col-md-3 mb-3">
+      <label for="validationTooltip04">Apellido Paterno</label>
+      <input type="text" class="form-control" id="validationTooltip04" placeholder="Apellido Pat" name="fapepat" required [(ngModel)]='fapepat'>
+      <div class="invalid-tooltip">
+        Please provide a valid state.
+      </div>
+    </div>
+    <div class="col-md-3 mb-3">
+      <label for="validationTooltip05">Apellido Materno</label>
+      <input type="text" class="form-control" id="validationTooltip05" placeholder="Apellido Mat" name="fapemat" required [(ngModel)]='fapemat'>
+      <div class="invalid-tooltip">
+        Please provide a valid zip.
+      </div>
+    </div>
+
+    <div class="col-md-6 mb-3">
+        <label for="validationTooltip03">Nombres</label>
+        <input type="text" class="form-control" id="validationTooltip03" placeholder="Nombres" name="fnombres" required [(ngModel)]='fnombres'>
+        <div class="invalid-tooltip">
+          Please provide a valid city.
+        </div>
+    </div>
+  </div>
+  
+  <div class="form-row">
+   
+    <div class="col-md-3 mb-3">
+      <label for="validationTooltip04">Departamento</label>
+      <select id="cars" class="form-control">
+        <option value="volvo">SIN DEPARTAMENTO</option>         
+      </select>
+      <div class="invalid-tooltip">
+        Please provide a valid state.
+      </div>
+    </div>
+    <div class="col-md-3 mb-3">
+      <label for="validationTooltip05">Provincia</label>
+      <select id="cars" class="form-control">
+        <option value="volvo">SIN PROVINCIA</option>         
+      </select>
+      <div class="invalid-tooltip">
+        Please provide a valid zip.
+      </div>
+    </div>
+
+    <div class="col-md-6 mb-3">
+        <label for="validationTooltip03">Distrito</label>
+        <select id="cars" class="form-control">
+            <option value="volvo">SIN DISTRITO</option>         
+          </select>
+        <div class="invalid-tooltip">
+          Please provide a valid city.
+        </div>
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="col-md-7 mb-3">
+        <label for="validationTooltip03">Dirección</label>
+        <input type="text" class="form-control" id="validationTooltip03" placeholder="Dirección del conductor" required>
+        <div class="invalid-tooltip">
+          Please provide a valid city.
+        </div>
+    </div>
+    <div class="col-md-5 mb-3">
+        <label for="validationTooltip03">¿Propietario?</label>
+        <label for="cbox2"> <input type="checkbox" id="cbox2" value="second_checkbox"> Marca SOLO si el infractor es propietario del vehículo</label>
+        <div class="invalid-tooltip">
+            Please provide a valid city.
+          </div>
+    </div> 
+
+  </div>
+
+    <div class="form-row">
+    
+      <div class="col-md-12 mb-3">
+          <label for="validationTooltip02" style="font-weight: bold;">DATOS DEL VEHÍCULO</label>
+      </div>    
+</div>
+
+<div class="form-row">        
+  <div class="col-md-2 mb-3">
+      <label for="validationTooltip02">Número de Placa</label>
+      <input type="text" class="form-control" id="validationTooltip05" placeholder="Placa" required>
+      <div class="valid-tooltip">
+        Looks good!
+      </div>
+  </div>   
+  
+  <div class="col-md-2 mb-3">
+    <label for="validationTooltip02" style="color: cornsilk;">N</label>
+    <br>        
+    <button type="submit" style="vertical-align: bottom;"><img src="../../../assets/img/buscar.png" alt="x" height="30px" width="28px"/></button>
+    &nbsp;
+    <button type="submit" style="vertical-align: bottom;"><img src="../../../assets/img/user.png" alt="x" height="30px" width="28px"/></button>
+  </div>  
+            
+  <div class="col-md-2 mb-3">
+      <label for="validationTooltip02">Año de Fabricación</label>
+      <input type="text" class="form-control" id="validationTooltip05" placeholder="Año de Fabricación" required>
+      <div class="valid-tooltip">
+        Looks good!
+      </div>
+  </div>    
+  
+  <div class="col-md-6 mb-3">
+        <label for="validationTooltip02">Direccion del Propietario</label>
+        <input type="text" class="form-control" id="validationTooltip05" placeholder="Dirección del propietario" required>
+        <div class="valid-tooltip">
+          Looks good!
+        </div>
+  </div>            
+
+  
+
+</div>   
+
+
+<div class="form-row">
+        
+  <div class="col-md-4 mb-3">
+      <label for="validationTooltip02" style="font-weight: bold;">DATOS DEL PROPIETARIO</label>
+  </div>    
+
+  <div class="col-md-8 mb-3">
+      <label for="cbox2"> <input type="checkbox" id="cbox2" value="second_checkbox"> Marca SOLO si existe responsabilidad administrativa</label>
+  </div>    
+
+</div>
+
+
+    <div class="form-row">
+
+        <div class="col-md-1 mb-3">
+            <label for="validationTooltip02">Tipo Doc.</label>
+            <select id="cars" class="form-control">
+              <option value="volvo">DNI</option>         
+            </select>
+            <div class="valid-tooltip">
+              Looks good!
+            </div>
+        </div>    
+        
+        <div class="col-md-2 mb-3">
+          <label for="validationTooltip02">Número de Documento</label>
+          <input type="text" class="form-control" id="validationTooltip01" placeholder="Número de documento" value="" required>      
+        </div>  
+
+        <div class="col-md-2 mb-3">
+            <label for="validationTooltip02" style="color: cornsilk;">N</label>
+            <br>        
+            <button type="submit" style="vertical-align: bottom;"><img src="../../../assets/img/buscar.png" alt="x" height="30px" width="28px"/></button>
+            &nbsp;
+            <button type="submit" style="vertical-align: bottom;"><img src="../../../assets/img/user.png" alt="x" height="30px" width="28px"/></button>
+          </div>  
+    
+
+          <div class="col-md-2 mb-3">
+            <label for="validationTooltip04">Apellido Paterno</label>
+            <input type="text" class="form-control" id="validationTooltip04" placeholder="Apellido Pat" required>
+            <div class="invalid-tooltip">
+              Please provide a valid state.
+            </div>
+          </div>
+          <div class="col-md-2 mb-3">
+            <label for="validationTooltip05">Apellido Materno</label>
+            <input type="text" class="form-control" id="validationTooltip05" placeholder="Apellido Mat" required>
+            <div class="invalid-tooltip">
+              Please provide a valid zip.
+            </div>
+          </div>    
+          
+          <div class="col-md-3 mb-3">
+            <label for="validationTooltip05">Nombres</label>
+            <input type="text" class="form-control" id="validationTooltip05" placeholder="Nombres" required>
+            <div class="invalid-tooltip">
+              Please provide a valid zip.
+            </div>
+          </div>    
+        </div>
+    
+      <div class="form-row">        
+        <div class="col-md-12 mb-3">
+            <label for="validationTooltip02" style="font-weight: bold;">DATOS DE LA INFRACCION</label>
+        </div>     
+      </div>
+      
+      <div class="form-row">        
+        <div class="col-md-2 mb-3">
+            <label for="validationTooltip02">Año</label>
+            <select id="cars" class="form-control">
+                <option value="volvo">DNI</option>         
+              </select>
+            <div class="valid-tooltip">
+              Looks good!
+            </div>
+        </div>            
+            
+        <div class="col-md-2 mb-3">
+            <label for="validationTooltip02">Cod. Infracción</label>
+            <select id="cars" class="form-control">
+                <option value="volvo">DNI</option>         
+              </select>
+            <div class="valid-tooltip">
+              Looks good!
+            </div>
+        </div>            
+
+        <div class="col-md-2 mb-3">
+            <label for="validationTooltip02">Fecha</label>
+            <input type="text" class="form-control" id="validationTooltip05" placeholder="Fecha" required>
+            <div class="valid-tooltip">
+              Looks good!
+            </div>
+        </div>         
+        
+        <div class="col-md-2 mb-3">
+            <label for="validationTooltip02">Hora</label>
+            <input type="text" class="form-control" id="validationTooltip05" placeholder="Fecha" required>
+            <div class="valid-tooltip">
+              Looks good!
+            </div>
+        </div>         
+
+        <div class="col-md-4 mb-3">
+            <label for="validationTooltip02">Lugar de Ocurrencia</label>
+            <input type="text" class="form-control" id="validationTooltip05" placeholder="Lugar de ocurrencia" required>
+            <div class="valid-tooltip">
+              Looks good!
+            </div>
+        </div>         
+      </div>   
+
+
+      <div class="form-row">        
+        <div class="col-md-2 mb-3">
+            <label for="validationTooltip02">Distrito</label>
+            <select id="cars" class="form-control">
+                <option value="volvo">DNI</option>         
+              </select>
+            <div class="valid-tooltip">
+              Looks good!
+            </div>
+        </div>            
+             
+
+        <div class="col-md-5 mb-3">
+            <label for="validationTooltip02">Observacion PNP</label>
+            <input type="text" class="form-control" id="validationTooltip05" placeholder="Observacion PNP" required>
+            <div class="valid-tooltip">
+              Looks good!
+            </div>
+        </div>         
+        
+        <div class="col-md-5 mb-3">
+            <label for="validationTooltip02">Observación conductor</label>
+            <input type="text" class="form-control" id="validationTooltip05" placeholder="Observacion conductor" required>
+            <div class="valid-tooltip">
+              Looks good!
+            </div>
+        </div>                 
+      </div>   
+
+
+      <div class="form-row">        
+        <div class="col-md-12 mb-3">
+            <label for="validationTooltip02" style="font-weight: bold;">AUTORIDAD QUE INTERVIENE</label>
+        </div>     
+      </div>
+      
+      <div class="form-row">        
+        <div class="col-md-3 mb-3">
+            <label for="validationTooltip02">CIP</label>
+            <input type="text" class="form-control" id="validationTooltip05" placeholder="CIP" required>
+            <div class="valid-tooltip">
+              Looks good!
+            </div>
+        </div>      
+        <div class="col-md-2 mb-3">
+            <label for="validationTooltip02" style="color: cornsilk;">N</label>
+            <br>        
+            <button type="submit" style="vertical-align: bottom;"><img src="../../../assets/img/buscar.png" alt="x" height="30px" width="28px"/></button>
+            &nbsp;
+            <button type="submit" style="vertical-align: bottom;"><img src="../../../assets/img/user.png" alt="x" height="30px" width="28px"/></button>
+          </div>  
+          <div class="col-md-7 mb-3">
+                <label for="validationTooltip02">Policia</label>
+                <input type="text" class="form-control" id="validationTooltip05" placeholder="CIP" required>
+                <div class="valid-tooltip">
+                  Looks good!
+                </div>
+          </div>      
+        
+      </div>            
+
+      <div class="form-row">       
+          
+        <div class="col-md-2 mb-3">
+            <label for="validationTooltip03">&nbsp;</label>
+            <br>
+            <label for="cbox2"> <input type="checkbox" id="cbox2" value="second_checkbox"> Testigo</label>
+            <div class="invalid-tooltip">
+                Please provide a valid city.
+              </div>
+        </div> 
+
+        <div class="col-md-10 mb-3">
+            <label for="validationTooltip03">&nbsp;</label>
+            <input type="text" class="form-control" id="validationTooltip05" placeholder="Ingrese el nombre del testigo" required>
+            <div class="valid-tooltip">
+              Looks good!
+            </div>
+        </div>  
+        
+        
+      </div>            
+    
+  <button class="btn btn-primary" type="submit">Registrar</button>
+</form>
+</div>
+
+
+
+
+        <app-registro-persona-natural (fdniPersonaO)="cargarDatos($event)"></app-registro-persona-natural>  
+
+

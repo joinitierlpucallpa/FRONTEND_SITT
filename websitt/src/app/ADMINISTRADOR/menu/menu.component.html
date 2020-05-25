@@ -1,0 +1,43 @@
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <a class="navbar-brand"  routerLinkActive="active" routerLink="/body">SITT</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+
+        <li class="nav-item dropdown" *ngFor="let e of menulist ">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"  routerLinkActive="active">{{e.nombre}} </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" >
+            <a class="dropdown-item"  routerLinkActive="active" routerLink="{{e1.urlAngular}}" *ngFor="let e1 of e.listaMenus ">{{e1.nombre}}</a>
+            
+          </div>
+        </li>
+        
+    <!--  
+    
+        <li class="nav-item active">
+          <a class="nav-link"  routerLinkActive="active" routerLink="/home">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"  routerLinkActive="active" routerLink="/home">Features</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"  routerLinkActive="active" routerLink="/home">Pricing</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Dropdown link
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item"  routerLinkActive="active" routerLink="/home">Action</a>
+            <a class="dropdown-item"  routerLinkActive="active" routerLink="/home">Another action</a>
+            <a class="dropdown-item"  routerLinkActive="active" routerLink="/home">Something else here</a>
+          </div>
+        </li>
+      
+    -->
+    </ul>
+  </div>
+  </nav>

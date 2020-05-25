@@ -1,0 +1,82 @@
+<div class="container">  
+  <h3 style="text-align: center;">Listado de Subsistemas</h3>  
+
+  <div class="table table-striped">
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary" (click)="ShowRegForm()" data-toggle="modal" data-target="#exampleModalCenter">
+      Nuevo Subsistema
+    </button>
+  
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>            
+                <th style="text-align: center;">Codigo</th>
+                <th style="text-align: center;">Nombre</th>
+                <th style="text-align: center;">Modificar</th>
+                <th style="text-align: center;">Eliminar</th>
+                <th style="text-align: center;">Acceder</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr mdbTableCol *ngFor="let e of subsistemalist | paginate: {itemsPerPage:4, currentPage: p}">          
+          <td style="text-align: center;">{{e.idMenu}}</td>
+          <td style="text-align: center;">{{e.nombre}}</td>
+          <td style="text-align: center;">
+            <button type="button" class="btn btn-primary" (click)="ShowUpdForm(e)" data-toggle="modal" data-target="#exampleModalCenter">Modificar</button>
+          </td> 
+          <td style="text-align: center;">
+            <button type="button" class="btn btn-primary" (click)="ShowRegFormForDelete(e)" data-toggle="modal" data-target="#exampleModalCenter">Modificar</button>
+          </td>   
+          <td style="text-align: center;">
+            <button type="button" class="btn btn-success" (click)="goSearch(e.idMenu)" >Ingresar</button>
+          </td>          
+        </tr>
+      </tbody>
+      <tfoot>
+        <pagination-controls (pageChange)="p =$event"></pagination-controls>
+      </tfoot>
+    </table>
+    
+
+  </div>
+      
+</div> 
+
+<form #regForm="ngForm">
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered" role="document">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="exampleModalLongTitle">Registro de Subsistema</h5>
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+
+      <div class="form-row">
+
+        <div class="col-md-6 mb-3">
+          <label for="validationTooltip02">Nombre</label>
+          <input type="text" class="form-control" id="validationTooltip01" placeholder="Nombre" value="" name="fname" [(ngModel)]='fname' required>      
+        </div>  
+      
+        <div class="col-md-6 mb-3">
+          <label for="validationTooltip02">Ruta</label>
+          <input type="text" class="form-control" id="validationTooltip01" placeholder="Ruta" value="" name="fruta" [(ngModel)]='fruta' required>      
+        </div>  
+
+        <input type="hidden" name="idMenu" [(ngModel)]='idMenu'>
+
+      </div>
+
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      <button type="button" class="btn btn-primary" (click)="Save(regForm)">Save changes</button>
+    </div>
+  </div>
+</div>
+</div>
+</form>
