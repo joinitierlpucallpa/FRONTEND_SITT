@@ -17,34 +17,35 @@ export class SubsitemaComponent implements OnInit {
 
   title = '..::WEBSITT::..';
   subsistemalist:subsistema[];
-  fname:string="";
-  fruta:string="";
-  idMenu:string="";
-  editCustomer:boolean=false;
-  subsistemaObject:subsistema;
-  FormHeader=""
+  fname: string = '';
+  fruta: string = '';
+  idMenu: string = '';
+  editCustomer: boolean = false;
+  subsistemaObject: subsistema;
+  FormHeader = '';
+  p: number = 1;
 
   constructor(private dataservice:SubsistemaService, private router:Router)
   {
   }
-  
+
   ngOnInit()
-   {    
+   {
     this.GetAllSubsistema();
    }
 
     Save(regForm:NgForm)
     {
       this.GetDummyObject(regForm); 
-      //alert("Add"+" "+this.subsistemaObject.nombre+" " +this.subsistemaObject.url);
-          
+      // alert("Add"+" "+this.subsistemaObject.nombre+" " +this.subsistemaObject.url);
+
       switch(this.FormHeader)
       {
       case "Add":
         this.Addsubsistema(this.subsistemaObject);
-        
-              //alert("Add"+ this.subsistemaObject.url);
-             //this.Addemployee(this.Dummyemployee);
+
+              // alert("Add"+ this.subsistemaObject.url);
+             // this.Addemployee(this.Dummyemployee);
       break;
       case "Edit":
         this.Updatesubsistema(this.subsistemaObject);
