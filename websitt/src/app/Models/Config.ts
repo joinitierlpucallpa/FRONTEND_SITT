@@ -1,1 +1,1 @@
-export const ROOT_URL:string="https://localhost:44320/api/";
+export const ROOT_URL:string= 'http://serverjoinit.database.windows.net/api/';
