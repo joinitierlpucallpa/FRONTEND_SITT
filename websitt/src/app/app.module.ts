@@ -30,7 +30,7 @@ import { RegistroPersonaNaturalComponent } from './UTILITARIOS/registro-persona-
 
 @NgModule({
   declarations: [
-    AppComponent,
+    AppComponent,        
     routingComponents,
     SistemaComponent,
     MenuComponent,

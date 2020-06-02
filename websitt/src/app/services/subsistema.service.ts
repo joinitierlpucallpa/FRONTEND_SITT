@@ -14,11 +14,11 @@ export class SubsistemaService {
     headers = new HttpHeaders().set('Content-Type', 'application/json');  
     constructor(private http: HttpClient) { }  
     getAllSubSystems() {
-      return this.http.get<subsistema[]>(this.apiUrl);
+      return this.http.get<subsistema[]>(this.apiUrl.concat('/Get'));
     }
 
     getOnlySubSystems(id:string) {
-      return this.http.get<subsistema>(this.apiUrl+"/"+id);
+      return this.http.get<subsistema>(this.apiUrl.concat('/GetSubsistema')+"/"+id);
     }
 
     AddSubsistema(subsist:subsistema)

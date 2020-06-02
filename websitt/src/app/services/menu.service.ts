@@ -16,7 +16,7 @@ export class MenuService {
   headers = new HttpHeaders().set('Content-Type', 'application/json');  
   constructor(private http: HttpClient) { }  
   getAllMenuSystems() {
-    this.apiUrl = ROOT_URL.concat("Subsistema/").concat(this.idDependencia);
+    this.apiUrl = ROOT_URL.concat("Subsistema/GetMenus/").concat(this.idDependencia);
     console.log(this.idDependencia);
     console.log(this.apiUrl);
     return this.http.get<menu[]>(this.apiUrl);

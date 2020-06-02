@@ -18,7 +18,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr mdbTableCol *ngFor="let e of subsistemalist | paginate: {itemsPerPage:4, currentPage: p}">          
+        <tr mdbTableCol *ngFor="let e of subsistemalist | paginate: { id: 'listing_pagination' ,itemsPerPage: 4, currentPage: page}">          
           <td style="text-align: center;">{{e.idMenu}}</td>
           <td style="text-align: center;">{{e.nombre}}</td>
           <td style="text-align: center;">
@@ -33,7 +33,7 @@
         </tr>
       </tbody>
       <tfoot>
-        <pagination-controls (pageChange)="p =$event"></pagination-controls>
+        <pagination-controls id="listing_pagination" directionLinks="true" (pageChange)="page = $event"></pagination-controls>
       </tfoot>
     </table>
     
